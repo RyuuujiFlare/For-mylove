@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Baby</title>
+    <style>
+        /* Background with a romantic theme */
+        body {
+            background-image: url('C:Users/Numer&Meryl/Pictures/Valens.jpg'); /* Replace with your own image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Main container */
+        .container {
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+            padding: 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            font-size: 18px;
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 120px;
+        }
+
+        #yesButton {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #yesButton:hover {
+            background-color: #ff1e50;
+        }
+
+        #no {
+            background-color: #444;
+            color: white;
+            position: absolute;
+        }
+
+        /* Media Query for Smaller Screens */
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .btn {
+                width: 100px;
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Will you be my Valentine's Day, mahal ko? 💖</h1>
+        <button class="btn" id="yesButton">Yes</button>
+        <button class="btn" id="no">No</button>
+    </div>
+
+    <script>
+        document.getElementById("yesButton").addEventListener("click", function() {
+            alert("I love you baby ko! 💘");
+        });
+
+        var no = document.getElementById("no");
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            no.style.left = x + "px";
+            no.style.top = y + "px";
+        }
+
+        // Makes the "No" button move away on hover (for desktops)
+        no.addEventListener("mouseover", moveButton);
+
+        // Makes the "No" button move away on touch (for mobile)
+        no.addEventListener("touchstart", function(event) {
+            event.preventDefault(); // Prevents accidental clicking
+            moveButton();
+        });
+    </script>
+
+</body>
+</html>
